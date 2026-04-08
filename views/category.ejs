@@ -1,0 +1,58 @@
+<%- include('partials/header', { title: category.name }) %>
+
+<main style="padding-top: 100px;">
+    <!-- Category Header -->
+    <section class="category-header section" style="text-align: center; border-bottom: 1px solid rgba(0,0,0,0.1);">
+        <h1 style="font-size: 5rem; margin-bottom: 20px;"><%= category.fullName %></h1>
+        <p style="max-width: 800px; margin: 0 auto; font-style: italic; font-family: var(--font-serif);"><%= category.tagline %></p>
+    </section>
+
+    <div class="category-container" style="display: flex; padding: 50px;">
+        <!-- Sidebar -->
+        <aside style="width: 250px; flex-shrink: 0; padding-right: 40px; border-right: 1px solid rgba(0,0,0,0.05);">
+            <h4 style="font-family: var(--font-heading); text-transform: uppercase; margin-bottom: 25px; letter-spacing: 1px;">Browse by</h4>
+            <ul style="list-style: none;">
+                <li style="margin-bottom: 12px;"><a href="/category/all" style="font-weight: 500;">All Products</a></li>
+                <li style="margin-bottom: 12px;"><a href="/category/beans">Coffee Beans</a></li>
+                <li style="margin-bottom: 12px;"><a href="/category/cakes">Coffee Cakes</a></li>
+                <li style="margin-bottom: 12px;"><a href="/category/croissants">Croissants</a></li>
+                <li style="margin-bottom: 12px;"><a href="/category/iced-coffee">Iced Coffee</a></li>
+            </ul>
+
+            <div style="margin-top: 50px;">
+                <h4 style="font-family: var(--font-heading); text-transform: uppercase; margin-bottom: 25px; letter-spacing: 1px;">Filter by</h4>
+                <div class="filter-price">
+                    <label>Price</label>
+                    <input type="range" min="0" max="50" style="width: 100%; margin-top: 10px;">
+                </div>
+            </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <section style="flex-grow: 1; padding-left: 50px;">
+            <div class="grid" style="grid-template-columns: repeat(4, 1fr);">
+                <% category.products.forEach(product => { %>
+                    <div class="product-card">
+                        <div class="img-container">
+                            <% 
+                                let primaryImg = `/images/${product.image}`;
+                                let hoverImg = `/images/${product.hover}`;
+                            %>
+                            <img src="<%= primaryImg %>" alt="<%= product.name %>" class="img-primary">
+                            <img src="<%= hoverImg %>" alt="<%= product.name %>" class="img-hover">
+                            <div class="quick-view">Quick View</div>
+                            <% if(product.badge) { %>
+                                <span style="position: absolute; top: 10px; left: 10px; background: #D4B48F; color: white; padding: 4px 10px; font-size: 0.7rem; font-family: var(--font-heading); text-transform: uppercase;"><%= product.badge %></span>
+                            <% } %>
+                        </div>
+                        <h3 style="font-size: 1rem; margin-bottom: 8px; font-weight: 500; min-height: 2.4em;"><%= product.name %></h3>
+                        <p class="price" style="font-family: var(--font-heading); font-size: 1.1rem; color: #666;">£<%= product.price.toFixed(2) %></p>
+                        <button class="btn" style="width: 100%; margin-top: 20px; padding: 12px; font-size: 0.8rem;">Add to Cart</button>
+                    </div>
+                <% }) %>
+            </div>
+        </section>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

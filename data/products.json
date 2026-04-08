@@ -1,0 +1,65 @@
+{
+  "categories": [
+    {
+      "id": "beans",
+      "name": "Coffee Beans",
+      "fullName": "Premium Coffee Beans",
+      "tagline": "Discover the Essence of Exquisite Coffee Beans. Each bean is meticulously sourced from the finest coffee-growing regions.",
+      "headerImage": "/images/header_beans.png",
+      "products": [
+        { "id": "b1", "name": "Ethiopian Yirgacheffe Coffee Beans", "price": 10.00, "image": "beans_b1.png", "hover": "b1_hover.png" },
+        { "id": "b2", "name": "Colombian Supremo Coffee Beans", "price": 10.00, "image": "beans_b2.png", "hover": "b2_hover.png" },
+        { "id": "b3", "name": "Sumatra Mandheling Coffee Beans", "price": 10.00, "badge": "Makers Pick", "image": "beans_b3.png", "hover": "b3_hover.png" },
+        { "id": "b4", "name": "House Blend Coffee Beans", "price": 10.00, "image": "beans_b4.png", "hover": "b4_hover.png" }
+      ]
+    },
+    {
+      "id": "cakes",
+      "name": "Coffee Cake",
+      "fullName": "Delicious Coffee Cakes",
+      "tagline": "Indulge in our delightful range of freshly baked coffee cakes, perfectly paired with our artisan roasts.",
+      "headerImage": "/images/header_cakes.png",
+      "products": [
+        { "id": "c1", "name": "Classic Coffee Cake", "price": 12.00, "image": "cakes_c1.png", "hover": "c1_hover.png" },
+        { "id": "c2", "name": "Chocolate Chip Coffee Cake", "price": 13.00, "image": "cakes_c2.png", "hover": "c2_hover.png" },
+        { "id": "c3", "name": "Blueberry Coffee Cake", "price": 10.00, "image": "cakes_c3.png", "hover": "c3_hover.png" },
+        { "id": "c4", "name": "Cinnamon Coffee Cake", "price": 14.00, "image": "cakes_c4.png", "hover": "c4_hover.png" },
+        { "id": "c5", "name": "Poppy Seed Coffee Cake", "price": 10.00, "image": "cakes_c5.png", "hover": "c5_hover.png" }
+      ]
+    },
+    {
+      "id": "croissants",
+      "name": "Croissants",
+      "fullName": "Artisan Croissants",
+      "tagline": "Discover the buttery, flaky perfection of our artisan croissants, baked fresh every morning.",
+      "headerImage": "/images/header_croissants.png",
+      "products": [
+        { "id": "cr1", "name": "Vanilla Croissant", "price": 10.00, "image": "croissants_cr1.png", "hover": "cr1_hover.png" },
+        { "id": "cr2", "name": "Croissant Pistachio", "price": 10.00, "image": "croissants_cr2.png", "hover": "cr2_hover.png" },
+        { "id": "cr3", "name": "Croissant Chocolate", "price": 10.00, "image": "croissants_cr3.png", "hover": "cr3_hover.png" },
+        { "id": "cr4", "name": "Croissant Strawberry", "price": 10.00, "image": "croissants_cr4.png", "hover": "cr4_hover.png" }
+      ]
+    },
+    {
+      "id": "iced-coffee",
+      "name": "Iced Coffee",
+      "fullName": "Refreshing Iced Coffee",
+      "tagline": "Cool down with our refreshing selection of iced coffees, prepared with our signature cold brew.",
+      "headerImage": "/images/header_iced_coffee.png",
+      "products": [
+        { "id": "ic1", "name": "Classic Iced Coffee", "price": 10.00, "image": "iced-coffee_ic1.png", "hover": "ic1_hover.png" },
+        { "id": "ic2", "name": "Vanilla Iced Coffee", "price": 10.00, "image": "iced-coffee_ic2.png", "hover": "ic2_hover.png" },
+        { "id": "ic3", "name": "Mocha Iced Coffee", "price": 15.00, "image": "iced-coffee_ic3.png", "hover": "ic3_hover.png" },
+        { "id": "ic4", "name": "Caramel Iced Coffee", "price": 10.00, "image": "iced-coffee_ic4.png", "hover": "ic4_hover.png" }
+      ]
+    },
+    {
+      "id": "coffee-shops",
+      "name": "Coffee Shops",
+      "fullName": "Explore Our Cafes",
+      "tagline": "Visit our artisan coffee shops and experience the culture in person.",
+      "headerImage": "/images/header_shops.png",
+      "products": []
+    }
+  ]
+}

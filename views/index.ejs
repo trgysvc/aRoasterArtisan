@@ -1,0 +1,134 @@
+<%- include('partials/header', { title: 'Home' }) %>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-left">
+            <h1>ARA<br>a roaster artisan</h1>
+            <p>Seçkin kahve çekirdeklerinin özünü keşfedin. Her bir çekirdek, en iyi kahve yetiştirme bölgelerinden özenle tedarik edilmektedir.</p>
+            <div class="hero-actions">
+                <a href="/category/beans" class="btn">Shop Beans</a>
+                <a href="/about" class="btn btn-outline">Explore Cafes</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-circle"></div>
+            <img src="/images/hero_coffee.png" alt="Coffee Splash" class="hero-img">
+        </div>
+    </section>
+
+    <!-- Ticker Bar -->
+    <div class="ticker">
+        <div class="ticker-content">
+            <div class="ticker-item"><span class="ticker-icon">☕</span> Get 10% Off Your First Order</div>
+            <div class="ticker-item"><span class="ticker-icon">☕</span> Free Delivery In The UK</div>
+            <div class="ticker-item"><span class="ticker-icon">☕</span> Taste For Everyone</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="ticker-item"><span class="ticker-icon">☕</span> Get 10% Off Your First Order</div>
+            <div class="ticker-item"><span class="ticker-icon">☕</span> Free Delivery In The UK</div>
+            <div class="ticker-item"><span class="ticker-icon">☕</span> Taste For Everyone</div>
+        </div>
+    </div>
+
+    <!-- Category Row (5 items) -->
+    <section class="categories-row">
+        <% 
+            let displayCats = [
+                { id: 'iced-coffee', name: 'Iced Coffee', img: '/images/cat_iced.png' },
+                { id: 'cakes', name: 'Coffee Cake', img: '/images/cat_cake.png' },
+                { id: 'croissants', name: 'Croissant', img: '/images/cat_croissant.png' },
+                { id: 'beans', name: 'Coffee Beans', img: '/images/cat_beans.png' },
+                { id: 'coffee-shops', name: 'Coffee Shops', img: '/images/cat_shops.png' }
+            ];
+        %>
+        <% displayCats.forEach(cat => { %>
+            <a href="/category/<%= cat.id %>" class="cat-item">
+                <img src="<%= cat.img %>" alt="<%= cat.name %>">
+                <h3><%= cat.name %></h3>
+            </a>
+        <% }) %>
+    </section>
+
+    <!-- Section: Tang-Tastic Coffee -->
+    <section class="section" style="padding-top: 50px;">
+        <h2 class="section-title">Tang-Tastic Coffee</h2>
+        <div class="grid">
+            <% 
+                let tangTastic = categories.find(c => c.id === 'beans').products.slice(0, 4);
+            %>
+            <% tangTastic.forEach(product => { %>
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="/images/<%= product.image %>" class="img-primary" alt="<%= product.name %>">
+                        <img src="/images/<%= product.hover %>" class="img-hover" alt="<%= product.name %> hover">
+                        <div class="quick-view">Quick View</div>
+                        <% if(product.badge) { %>
+                            <span style="position: absolute; top: 10px; left: 10px; background: #D4B48F; color: white; padding: 4px 10px; font-size: 0.7rem; font-family: var(--font-heading); text-transform: uppercase;"><%= product.badge %></span>
+                        <% } %>
+                    </div>
+                    <h3 style="font-size: 1rem; font-weight: 400; font-family: var(--font-sans); margin-bottom: 5px;"><%= product.name %></h3>
+                    <p class="price" style="font-size: 0.9rem; color: #666;">£<%= product.price.toFixed(2) %></p>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <!-- Section: To Go With Coffee -->
+    <section class="section" style="padding-top: 100px;">
+        <h2 class="section-title">To Go With Coffee</h2>
+        <div class="grid">
+            <% 
+                let toGo = categories.find(c => c.id === 'croissants').products.slice(0, 4);
+            %>
+            <% toGo.forEach(product => { %>
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="/images/<%= product.image %>" class="img-primary" alt="<%= product.name %>">
+                        <img src="/images/<%= product.hover %>" class="img-hover" alt="<%= product.name %> hover">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h3 style="font-size: 1rem; font-weight: 400; font-family: var(--font-sans); margin-bottom: 5px;"><%= product.name %></h3>
+                    <p class="price" style="font-size: 0.9rem; color: #666;">£<%= product.price.toFixed(2) %></p>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+
+    <!-- UK's Number #1 Section -->
+    <section class="section" style="padding: 150px 100px; display: flex; align-items: center; gap: 80px; background: #F1E4D4;">
+        <div style="flex: 1;">
+            <h2 style="font-size: 4.5rem; font-family: var(--font-heading); line-height: 1; margin-bottom: 40px;">Ara Kafe ile <br>Her An <span style="color: #8C6239;">Daha Özel</span></h2>
+            <p style="font-size: 1.1rem; margin-bottom: 40px; color: #444; line-height: 1.6;">Ara Kafe, dost sohbetlerini ve unutulmaz anları tatlarla buluşturmak için yola çıktı. Yerel ve taze malzemelerle hazırlanan tariflerimiz, her zevke hitap edecek çeşitliliğe sahiptir. Sizleri, modern tasarımıyla samimiyeti bir araya getiren mekanımıza bekliyoruz.</p>
+            <div style="display: flex; gap: 20px;">
+                <a href="/about" class="btn">About Us</a>
+                <a href="/category/beans" class="btn btn-outline">Coffee Beans</a>
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <img src="/images/coffee_hub_beans.png" alt="Coffee Hub" style="width: 100%; border-radius: 5px;">
+        </div>
+    </section>
+
+    <!-- Section: Iced Cold Coffee -->
+    <section class="section" style="padding-top: 100px; padding-bottom: 150px;">
+        <h2 class="section-title">Iced Cold Coffee</h2>
+        <div class="grid">
+            <% 
+                let iced = categories.find(c => c.id === 'iced-coffee').products.slice(0, 4);
+            %>
+            <% iced.forEach(product => { %>
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="/images/<%= product.image %>" class="img-primary" alt="<%= product.name %>">
+                        <img src="/images/<%= product.hover %>" class="img-hover" alt="<%= product.name %> hover">
+                        <div class="quick-view">Quick View</div>
+                    </div>
+                    <h3 style="font-size: 1rem; font-weight: 400; font-family: var(--font-sans); margin-bottom: 5px;"><%= product.name %></h3>
+                    <p class="price" style="font-size: 0.9rem; color: #666;">£<%= product.price.toFixed(2) %></p>
+                </div>
+            <% }) %>
+        </div>
+    </section>
+</main>
+
+<%- include('partials/footer') %>

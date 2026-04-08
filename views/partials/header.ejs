@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> | Ara Roaster Artisan</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <span class="promo-text">Free Delivery in The UK</span>
+            <div class="utility-icons">
+                <span>👤</span>
+                <span>🤍</span>
+                <span>📍</span>
+            </div>
+        </div>
+    </div>
+    
+    <header id="main-header">
+        <div class="logo-container">
+            <a href="/"><img src="/images/logo_horizontal.png" alt="Ara Roaster Artisan" style="height: 60px; width: auto;"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/" class="<%= title === 'Home' ? 'active' : '' %>">Coffee Hub</a></li>
+                <li class="has-mega">
+                    <a href="#">Coffee Products</a>
+                    <div class="mega-menu">
+                        <div class="mega-col">
+                            <a href="/category/all">All Products</a>
+                        </div>
+                        <div class="mega-col">
+                            <a href="/category/beans">Coffee Beans</a>
+                        </div>
+                        <div class="mega-col">
+                            <a href="/category/cakes">Coffee Cakes</a>
+                        </div>
+                        <div class="mega-col">
+                            <a href="/category/croissants">Croissants</a>
+                        </div>
+                        <div class="mega-col">
+                            <a href="/category/iced-coffee">Iced Coffee</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/about" class="<%= title === 'About Us' ? 'active' : '' %>">About</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <a href="#" class="basket-btn">Your Basket</a>
+        </div>
+    </header>
+
+    <script src="/js/modal.js"></script>
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 40) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- Modal Overlay -->
+    <div id="quick-view-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-left">
+                <img id="modal-img" src="" alt="Product Detail">
+            </div>
+            <div class="modal-right">
+                <h2 id="modal-title">Product Name</h2>
+                <div id="modal-price" class="price">£0.00</div>
+                <p id="modal-desc" class="description">Premium artisan quality, meticulously sourced for the perfect taste.</p>
+                <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                    <input type="number" value="1" min="1" style="width: 60px; padding: 10px; border: 1px solid #ddd;">
+                    <button class="btn" style="flex: 1;">Add to Basket</button>
+                </div>
+                <a href="#" id="modal-link" style="font-size: 0.8rem; text-decoration: underline;">View Full Details</a>
+            </div>
+        </div>
+    </div>
