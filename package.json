@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/trgysvc/aRoasterArtisan#readme",
   "dependencies": {
+    "@vercel/speed-insights": "^2.0.0",
     "ejs": "^5.0.1",
     "express": "^5.2.1"
   }
