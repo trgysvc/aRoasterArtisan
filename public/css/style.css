@@ -616,3 +616,293 @@ footer {
         font-size: 1rem;
     }
 }
+
+/* --- Responsive Redesign --- */
+
+/* Utility */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* General Layout Responsive */
+@media (max-width: 1200px) {
+    .hero {
+        padding: 40px 50px 0;
+    }
+    .hero h1 {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Header & Mobile Nav */
+    header {
+        padding: 20px 30px;
+    }
+    header.scrolled {
+        padding: 12px 30px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1002;
+        margin-left: 20px;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--text-dark);
+        transition: var(--transition-smooth);
+    }
+
+    .toggle-active span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .toggle-active span:nth-child(2) { opacity: 0; }
+    .toggle-active span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary-bg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        z-index: 1001;
+    }
+
+    nav.nav-active {
+        right: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    nav a {
+        font-size: 2rem;
+        font-family: var(--font-serif);
+    }
+
+    .has-mega:hover .mega-menu {
+        display: none; /* Disable mega menu on mobile toggle */
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+    }
+
+    /* Hero Responsive - Tidier side-by-side */
+    .hero {
+        flex-direction: row;
+        height: auto;
+        padding: 120px 20px 60px;
+        align-items: center;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .hero-left {
+        flex: 1;
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem; /* Scaled down for side-by-side */
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 0.8rem;
+        margin: 10px 0 0;
+        max-width: 100%;
+    }
+
+    .hero-right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .hero-circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-img {
+        max-width: 110%;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar-content {
+        padding: 0 20px;
+    }
+    .utility-icons {
+        right: 20px;
+    }
+
+    /* Grids */
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .categories-row {
+        flex-wrap: wrap;
+        padding: 60px 20px;
+        gap: 15px;
+    }
+
+    .cat-item {
+        flex: 1 1 30%;
+    }
+
+    /* Footer - Redesigned for Tidiness */
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 60px 20px;
+        text-align: left;
+        gap: 30px;
+    }
+
+    .footer-col:nth-child(1) {
+        grid-column: span 1;
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .footer-col:nth-child(4) {
+        order: -1; /* Move to top potentially? No, user said 'next to logo' */
+    }
+    
+    /* Using specific ordering for mobile footer */
+    .footer-col:nth-child(1) { order: 1; grid-column: span 1; } /* Logo */
+    .footer-col:nth-child(4) { order: 2; grid-column: span 1; } /* Digital Menu */
+    .footer-col:nth-child(2) { order: 3; grid-column: span 1; } /* Coffee's */
+    .footer-col:nth-child(3) { order: 4; grid-column: span 1; } /* Ara Roaster */
+    .footer-col:nth-child(5) { order: 5; grid-column: span 2; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 30px; } /* Instagram/Copyright */
+
+    .footer-col h4 {
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 8px;
+        font-size: 0.85rem;
+    }
+
+    .insta-grid {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .promo-text {
+        font-size: 0.7rem;
+    }
+    
+    footer {
+        grid-template-columns: 1fr;
+    }
+    .footer-col:first-child, .footer-col:last-child {
+        grid-column: span 1;
+    }
+}
+/* Privacy Page Responsive */
+.privacy-page {
+    padding: 160px 20px 80px;
+    background-color: var(--primary-bg);
+}
+
+.legal-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--white);
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.legal-container h1 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .legal-container {
+        padding: 30px 20px;
+    }
+    
+    .legal-container h1 {
+        font-size: 2rem;
+    }
+}
+
+/* About Page Specific Responsive */
+@media (max-width: 1024px) {
+    .about-hero {
+        flex-direction: column !important;
+        gap: 40px !important;
+        padding-top: 15vw !important;
+    }
+    
+    .about-hero h1 {
+        font-size: 3rem !important;
+    }
+}
+
+/* Promo Highlight Section */
+.promo-highlight {
+    padding: 150px 100px;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    background: #F1E4D4;
+}
+
+@media (max-width: 1024px) {
+    .promo-highlight {
+        flex-direction: column;
+        padding: 80px 30px;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .promo-highlight h2 {
+        font-size: 3rem !important;
+    }
+}

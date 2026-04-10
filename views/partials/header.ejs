@@ -54,7 +54,11 @@
             </ul>
         </nav>
         <div class="header-right">
-            <a href="#" class="basket-btn">Your Basket</a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -73,6 +77,17 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Hamburger Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.querySelector('nav');
+        const body = document.body;
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('nav-active');
+            menuToggle.classList.toggle('toggle-active');
+            body.classList.toggle('no-scroll');
         });
     </script>
 
