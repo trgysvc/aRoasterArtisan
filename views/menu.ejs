@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+
+<main class="qrmenu-page">
+    <div class="menu-hero">
+        <h1 class="heading">Our Digital Menu</h1>
+        <p class="tagline">Artisan Roasts • Fresh Bakes • Craft Drinks</p>
+    </div>
+
+    <div class="menu-container">
+        <% categories.forEach(category => { %>
+            <% if (category.products && category.products.length > 0) { %>
+                <section class="menu-section">
+                    <div class="category-header">
+                        <img src="<%= category.headerImage %>" alt="<%= category.name %>" class="cat-icon">
+                        <h2 class="serif"><%= category.name %></h2>
+                        <div class="line-divider"></div>
+                    </div>
+                    
+                    <div class="menu-list">
+                        <% category.products.forEach(product => { %>
+                            <div class="menu-item">
+                                <div class="item-info">
+                                    <h3 class="item-name"><%= product.name %></h3>
+                                    <% if (product.badge) { %>
+                                        <span class="item-badge"><%= product.badge %></span>
+                                    <% } %>
+                                </div>
+                                <div class="item-price">£<%= product.price.toFixed(2) %></div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </section>
+            <% } %>
+        <% }); %>
+    </div>
+
+    <div class="menu-footer">
+        <div class="qr-placeholder">
+            <div class="qr-mock">
+                <!-- Simulation of a QR code using CSS/SVG -->
+                <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" fill="none" stroke="#332A22" stroke-width="2"/>
+                    <rect x="10" y="10" width="25" height="25" fill="#332A22"/>
+                    <rect x="65" y="10" width="25" height="25" fill="#332A22"/>
+                    <rect x="10" y="65" width="25" height="25" fill="#332A22"/>
+                    <rect x="40" y="40" width="20" height="20" fill="#332A22"/>
+                    <rect x="70" y="70" width="10" height="10" fill="#332A22"/>
+                    <rect x="50" y="70" width="10" height="10" fill="#332A22"/>
+                    <rect x="70" y="50" width="10" height="10" fill="#332A22"/>
+                </svg>
+            </div>
+            <p>Scan to Share our Menu</p>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

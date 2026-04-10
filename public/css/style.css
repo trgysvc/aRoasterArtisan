@@ -374,8 +374,8 @@ footer {
     color: var(--white);
     padding: 100px 80px;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 2fr;
-    gap: 60px;
+    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
+    gap: 40px;
 }
 
 .footer-col h4 {
@@ -475,4 +475,144 @@ footer {
 .modal-right .btn {
     width: 100%;
     text-align: center;
+}
+
+/* QR Menu Page Styles */
+.qrmenu-page {
+    padding-top: 140px; /* Space for fixed header */
+    min-height: 100vh;
+}
+
+.menu-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: rgba(51, 42, 34, 0.03);
+    margin-bottom: 40px;
+}
+
+.menu-hero h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.menu-hero .tagline {
+    font-family: var(--font-serif);
+    font-style: italic;
+    opacity: 0.7;
+}
+
+.menu-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+}
+
+.menu-section {
+    margin-bottom: 60px;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.cat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.category-header h2 {
+    font-size: 2.2rem;
+    white-space: nowrap;
+}
+
+.line-divider {
+    flex: 1;
+    height: 1px;
+    background-color: rgba(51, 42, 34, 0.1);
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted rgba(51, 42, 34, 0.2);
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-name {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.item-badge {
+    font-size: 0.7rem;
+    background-color: var(--accent-green);
+    color: var(--white);
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+.item-price {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.menu-footer {
+    text-align: center;
+    padding: 60px;
+    background-color: #2B2B2B;
+    color: var(--white);
+}
+
+.qr-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.qr-mock svg {
+    padding: 10px;
+    background-color: var(--white);
+    border-radius: 8px;
+}
+
+.qr-placeholder p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Mobile Adjustments for QR Menu */
+@media (max-width: 768px) {
+    .menu-hero h1 {
+        font-size: 3rem;
+    }
+    
+    .category-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .item-name {
+        font-size: 1rem;
+    }
 }

@@ -56,6 +56,13 @@ app.get('/about', (req, res) => {
   res.render('about', { title: 'About Us' });
 });
 
+app.get('/menu', (req, res) => {
+  res.render('menu', { 
+    title: 'QR Menu',
+    categories: productsData.categories
+  });
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
