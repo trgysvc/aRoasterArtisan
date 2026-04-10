@@ -63,6 +63,10 @@ app.get('/menu', (req, res) => {
   });
 });
 
+app.get('/privacy', (req, res) => {
+  res.render('privacy', { title: 'Gizlilik Politikası' });
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);
